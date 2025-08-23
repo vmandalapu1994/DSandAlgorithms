@@ -21,12 +21,12 @@ public class Trie {
             curr.child.putIfAbsent(ch, new TrieNode());
             curr = curr.child.get(ch);
         }
-        curr.isWordEnd = true;
+        curr.isWord = true;
     }
 
     public boolean search(String word) {
         TrieNode node = searchPrefix(word);
-        return node != null && node.isWordEnd;
+        return node != null && node.isWord;
     }
 
     public boolean startsWith(String prefix) {
@@ -39,7 +39,7 @@ public class Trie {
         if (result.size() == 3) {
             return;
         }
-        if (node.isWordEnd) {
+        if (node.isWord) {
             System.out.println("Adding word:" + sb.toString() + " to array size:" + result.size());
             result.add(sb.toString());
         }
@@ -73,11 +73,11 @@ class TrieNode {
 
     Map<Character, TrieNode> child;
 
-    boolean isWordEnd;
+    boolean isWord;
 
     TrieNode() {
         child = new HashMap<>();
-        isWordEnd = false;
+        isWord = false;
     }
 
 }

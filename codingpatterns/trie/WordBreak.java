@@ -40,7 +40,7 @@ public class WordBreak {
                 return false;
             }
             curr = curr.child.get(ch);
-            if (curr.isWordEnd) {
+            if (curr.isWord) {
                 // Check break condition here and proceed to next iteration only when the string can't be split successfully.
                 if (canBreak(t.root, s.substring(i + 1))) {
                     mem.put(s, true);
