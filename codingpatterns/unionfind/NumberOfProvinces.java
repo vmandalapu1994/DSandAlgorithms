@@ -6,6 +6,7 @@ import java.util.Set;
 
 /**
  * @see <a href="https://leetcode.com/problems/number-of-provinces/description/">Number of Provinces</a>
+ * Needs revision
  */
 public class NumberOfProvinces {
 
@@ -25,8 +26,8 @@ public class NumberOfProvinces {
 
 class UnionFind {
 
-    private int[] parent;
-    private int[] rank;
+    private final int[] parent;
+    private final int[] rank;
 
     UnionFind(int n) {
         parent = new int[n];
